@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Knjižara</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Do+Hyeon&family=Lobster&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+
+  <body>
+  
+    <section class="title-section">
+
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="../index.html">Booker Dewit</a>
+        <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../index.html">Available books</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+                    Admin actions
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="editBook.html">Change book details</a>
+                    <a class="dropdown-item" href="checkBook.html">Specific book</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="allUsers.html">All users</a>
+                    <a class="dropdown-item" href="editUser.html">Edit user</a>
+                    <a class="dropdown-item" href="checkUser.html">Check user</a>
+                    </div>
+                </li>
+                </ul>
+
+                <a href="shoppingCart.html" class="shoppingCart">Cart<i class="fa fa-shopping-cart fa-lg" ></i></a>
+
+                <form class="form-inline">
+
+                <button type="button" class="btn btn-block btn-dark" data-toggle="modal" data-target="#modalLogin">Log in</button>
+                <!-- MODAL LOG IN-->
+
+                <div class="container">
+                    <div class="col-lg-12">
+
+                    <div class="modal fade" id="modalLogin">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                            <h1>Log in</h1>
+                            </div>
+
+                            <div class="modal-body">
+                            Email &nbsp;
+                            <input type="email" class="form-control" style="margin-left: 28px;">
+                            <br>
+                            Password &nbsp;
+                            <input type="password" class="form-control">
+                            </div>
+
+                            <div class="modal-footer">
+                            <button type="button" name="button" class="btn btn-warning" data-dismiss="modal" >Continue</button>
+                            </div>
+
+                        </div>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-block btn-dark" data-toggle="modal" data-target="#modalRegister">Register</button>
+
+                <!-- MODAL REGISTER -->
+                <div class="container">
+                    <div class="col-lg-12">
+
+                    <div class="modal fade" id="modalRegister">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                            <h1>Register</h1>
+                            </div>
+
+                            <div class="modal-body">
+                            Name &nbsp;
+                            <input type="input" class="form-control" style="margin-left: 28px;">
+                            <br>
+                            Email &nbsp;
+                            <input type="email" class="form-control" style="margin-left: 28px;">
+                            <br>
+                            Password &nbsp;
+                            <input type="password" class="form-control">
+                            </div>
+
+                            <div class="modal-footer">
+                            <button type="button" name="button" class="btn btn-warning" data-dismiss="modal" >Continue</button>
+                            </div>
+
+                        </div>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+
+                </form>
+
+            </div>
+        </nav>
+    </section>
+
+    <div class="description-container">
+        <img class="book-cover-readMore" src="../images/1984.jpg" alt="">
+        <div class="book-info">
+            <p>Naziv: 1984</p>
+            <p>ISBN: 978-1491929568</p>
+            <p>Izdavacka kuca: Neka kuca</p>
+            <p>Autor: Dzordz Orvel</p>
+            <p>Godina izdavanja: 2013</p>
+            <p>Kratak opis: Nesto o knjizi</p>
+            <p>Broj stranica: 157</p>
+            <p>Tip poveza: Meki</p>
+            <p>Pismo: Latinica</p>
+            <p>Jezik: Engleski</p>
+            <span class="price">Cena: 945 din
+            <div>
+                <a href="editBook.html" class="link-button">Izmeni</a>
+                <a href="" class="link-button">Kupi</a>
+            </div>
+        </div>
+    </div>
+    <p class="book-description"><span class="temp1">Opis:</span> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt ullam ab magnam sit veritatis enim nam modi facilis nostrum excepturi. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione laudantium asperiores labore deserunt omnis soluta dolorem praesentium ipsa, excepturi eligendi recusandae quos aspernatur illo repellat mollitia sit voluptatum blanditiis officia ipsum itaque. Quidem ab voluptas, quam consequuntur suscipit illum non laudantium error neque earum! Distinctio tempore nemo blanditiis, corporis dolor voluptates! Aliquam fugiat odio cumque amet commodi quos ratione, fuga iusto facilis voluptas consectetur quis magni maxime libero. Saepe culpa debitis dolore tempora voluptatibus corrupti molestiae ratione quibusdam, cupiditate quae facere, voluptas enim obcaecati excepturi iste perferendis. Cumque sunt porro molestias atque officia nisi beatae? Sapiente aliquam adipisci nemo delectus?</p>
+    
+    <section class="footer-section">
+        <div class="footer-container">
+            <a href="https://github.com/Boris-Jancic" class="link-button">Boris Jančić SF-29/2019</a>
+        </div>
+    </section>
+    
+    </body>
+</html>

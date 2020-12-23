@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Knjižara</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Do+Hyeon&family=Lobster&display=swap" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <section class="title-section">
+
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="../index.html">Booker Dewit</a>
+      <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="../index.html">Available books</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+              Admin actions
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="editBook.html">Change book details</a>
+              <a class="dropdown-item" href="checkBook.html">Specific book</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="allUsers.html">All users</a>
+              <a class="dropdown-item" href="editUser.html">Edit user</a>
+              <a class="dropdown-item" href="checkUser.html">Check user</a>
+            </div>
+          </li>
+        </ul>
+
+        <form class="form-inline">
+
+          <button type="button" class="btn btn-block btn-dark" data-toggle="modal" data-target="#modalLogin">Log in</button>
+          <!-- MODAL LOG IN-->
+
+          <div class="container">
+            <div class="col-lg-12">
+
+              <div class="modal fade" id="modalLogin">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+
+                    <div class="modal-header">
+                      <h1>Log in</h1>
+                    </div>
+
+                    <div class="modal-body">
+                    Email &nbsp;
+                    <input type="email" class="form-control" style="margin-left: 28px;">
+                    <br>
+                    Password &nbsp;
+                    <input type="password" class="form-control">
+                    </div>
+
+                    <div class="modal-footer">
+                      <button type="button" name="button" class="btn btn-warning" data-dismiss="modal" >Continue</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-block btn-dark" data-toggle="modal" data-target="#modalRegister">Register</button>
+
+          <!-- MODAL REGISTER -->
+          <div class="container">
+            <div class="col-lg-12">
+
+              <div class="modal fade" id="modalRegister">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+
+                    <div class="modal-header">
+                      <h1>Register</h1>
+                    </div>
+
+                    <div class="modal-body">
+                      Name &nbsp;
+                      <input type="input" class="form-control" style="margin-left: 28px;">
+                      <br>
+                      Email &nbsp;
+                      <input type="email" class="form-control" style="margin-left: 28px;">
+                      <br>
+                      Password &nbsp;
+                      <input type="password" class="form-control">
+                    </div>
+
+                    <div class="modal-footer">
+                      <button type="button" name="button" class="btn btn-warning" data-dismiss="modal" >Continue</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+    </nav>
+
+  <div class="description-container">
+    <img class="book-cover-readMore" src="../images/1984.jpg" alt="">
+    <div class="book-info">
+
+      <form>
+        Name
+        <input type="text" class="form-control" id="nameInput" placeholder="Book name" required>
+        International Standard Book Number (ISBN)
+        <input type="text" class="form-control" id="isbnInput" placeholder="ISBN" required>
+        Publishing House
+        <input type="text" class="form-control" id="publishingHouseInput" placeholder="Publishing House" required>
+        Author
+        <input type="text" class="form-control" id="authorInput" placeholder="Author" required>                   
+        Date of publishing
+        <input type="date" class="form-control" id="publishingDateInput" placeholder="Publishing Date" required>
+        Short description
+        <input type="text" class="form-control" id="addressInput" placeholder="Address" required>
+        Number of pages
+        <input type="number" class="form-control" id="pagesInput" placeholder="Number of pages" required>
+        Type of cover
+        <input type="text" class="form-control" id="coverTypeInput" placeholder="Cover type" required>
+        Letter
+        <input type="text" class="form-control" id="coverTypeInput" placeholder="Cover type" required>
+        Languague
+        <input type="text" class="form-control" id="languagueInput" placeholder="Languague" required>
+        Price
+        <input type="number" class="form-control" id="priceInput" placeholder="Price" required>
+
+        <form action="index.html">
+
+          <input type="submit" class="link-button" value="Potvrdi izmene"></input>                    
+        </form>
+      </form>
+    </div>
+  </div>
+
+  <section class="footer-section">
+    <div class="footer-container">
+        <a href="https://github.com/Boris-Jancic" class="link-button">Boris Jančić SF-29/2019</a>
+    </div>
+  </section>
+
+</body>
+</html>

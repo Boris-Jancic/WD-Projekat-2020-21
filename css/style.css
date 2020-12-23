@@ -1,0 +1,160 @@
+body {
+    background-color: #ac4b1c;
+}
+
+a {
+  text-decoration: inherit;
+  color: black;
+}
+
+.navbar {
+  background-color: #fd8c04;
+  font-family: 'Anton', sans-serif;
+}
+
+.navbar-brand {
+  font-family: 'Lobster', sans-serif;
+  font-size: 3rem;
+  color: black;
+  margin-right: 3%;
+}
+
+.collapse a {
+  text-decoration: none;
+  color: black;
+}
+
+.form-inline button {
+  float: right;
+}
+
+.form-inline .form-control {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.title-container {
+  position: relative;
+  text-align: center;
+  color: #F39C12 ;
+  display: inline-block;
+  text-shadow: 2px 2px black;
+}
+
+
+.title-div {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+}
+
+.title-div h1 h2 {
+  font-family: 'Do Hyeon', sans-serif;
+  outline-color: black
+}
+
+.title-text {
+  margin-top: 1%;
+  font-size: 3vw;
+}
+
+.row {
+  margin: auto;
+}
+
+.card {
+  text-align: left;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 80%;
+  margin-top: 50px;
+  margin-left: 9%;
+}
+
+.shoppingCart {
+  font-size: 2rem;
+  margin-right: 40px;
+}
+
+.book-cover {
+  width: 50%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.description-container {
+  display: flex;
+  min-height: 60vh;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-weight: bold;
+  color: black;
+}
+
+.book-cover-readMore {
+  width: 330px;
+  margin: 30px 30px 30px;
+}
+
+.book-description {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: justify;
+  padding: 10px;
+  background-color:#fd8c04;
+
+  font-size: 18px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: 70px;
+
+  border-radius: 35px;
+}
+
+
+@media screen and (max-width: 932px) {
+  .book-description {
+    margin: 20px;
+  }
+}
+
+.price {
+  margin-top: 30px;
+  font-size: 200%;
+}
+
+.link-button {
+  background-color: #f0ad4e;
+  border: none;
+  color: white;
+  padding: 5px 34px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 20px 2px;
+  cursor: pointer;
+}
+
+.description-container{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.footer-section {
+  background-color: #fd8c04;
+}
+
+.footer-container {
+  text-align: center;
+  margin-top: 50px;
+}
