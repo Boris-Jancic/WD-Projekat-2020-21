@@ -81,8 +81,9 @@ a {
 }
 
 .card-text {
-  height: 80px;
-  max-height: 80px;
+  font-size: 1vw;
+  height: 2%;
+  max-height: 2%;
 }
 
 .flex-container {
@@ -137,9 +138,17 @@ a {
 }
 
 
-@media screen and (max-width: 932px) {
+@media screen and (max-width: 767px) {
   .book-description {
     margin: 20px;
+  }
+
+  .card-title {
+    font-size: 3vh;
+  }
+
+  .card-text {
+    font-size: 2vh;
   }
 }
 
