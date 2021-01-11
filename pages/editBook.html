@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="wclassth=device-wclassth, initial-scale=1, shrink-to-fit=no">
 
     <title>Knjižara</title>
 
@@ -18,7 +18,16 @@
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Do+Hyeon&family=Lobster&display=swap" rel="stylesheet">
+   
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <!-- JAVASCRIPT -->
+    <script src="../js/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/validation.js"></script>
+    <script src="../js/components.js"></script>
   </head>
 
   <body>
@@ -32,19 +41,19 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" class="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="../index.html">Available books</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" class="navbarDropdown" role="button" data-toggle="dropdown">
               Admin actions
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="editBook.html">Change book details</a>
               <a class="dropdown-item" href="checkBook.html">Specific book</a>
-              <div class="dropdown-divider"></div>
+              <div class="dropdown-divclasser"></div>
               <a class="dropdown-item" href="allUsers.html">All users</a>
               <a class="dropdown-item" href="editUser.html">Edit user</a>
               <a class="dropdown-item" href="checkUser.html">Check user</a>
@@ -60,7 +69,7 @@
           <div class="container">
             <div class="col-lg-12">
 
-              <div class="modal fade" id="modalLogin">
+              <div class="modal fade" class="modalLogin">
                 <div class="modal-dialog">
                   <div class="modal-content">
 
@@ -93,7 +102,7 @@
           <div class="container">
             <div class="col-lg-12">
 
-              <div class="modal fade" id="modalRegister">
+              <div class="modal fade" class="modalRegister">
                 <div class="modal-dialog">
                   <div class="modal-content">
 
@@ -132,35 +141,31 @@
     <img class="book-cover-readMore" src="../images/1984.jpg" alt="">
     <div class="book-info">
 
-      <form>
         Name
-        <input type="text" class="form-control" id="nameInput" placeholder="Book name" required>
+        <input type="text" class="form-control" id="nameInput" placeholder="Book name" >
         International Standard Book Number (ISBN)
-        <input type="text" class="form-control" id="isbnInput" placeholder="ISBN" required>
+        <input type="text" class="form-control" id="isbnInput" placeholder="ISBN" >
         Publishing House
-        <input type="text" class="form-control" id="publishingHouseInput" placeholder="Publishing House" required>
+        <input type="text" class="form-control" id="publishingHouseInput" placeholder="Publishing House" >
         Author
-        <input type="text" class="form-control" id="authorInput" placeholder="Author" required>                   
+        <input type="text" class="form-control" id="authorInput" placeholder="Author" >                   
         Date of publishing
-        <input type="date" class="form-control" id="publishingDateInput" placeholder="Publishing Date" required>
+        <input type="date" class="form-control" id="publishingDateInput" placeholder="Publishing Date" >
         Short description
-        <input type="text" class="form-control" id="addressInput" placeholder="Address" required>
+        <input type="text" class="form-control" id="shortDesc" placeholder="Address" >
         Number of pages
-        <input type="number" class="form-control" id="pagesInput" placeholder="Number of pages" required>
+        <input type="number" class="form-control" id="pagesInput" placeholder="Number of pages" >
         Type of cover
-        <input type="text" class="form-control" id="coverTypeInput" placeholder="Cover type" required>
+        <input type="text" class="form-control" id="coverTypeInput" placeholder="Cover type" >
         Letter
-        <input type="text" class="form-control" id="coverTypeInput" placeholder="Cover type" required>
+        <input type="text" class="form-control" id="letterInput" placeholder="Cover type" >
         Languague
-        <input type="text" class="form-control" id="languagueInput" placeholder="Languague" required>
+        <input type="text" class="form-control" id="languagueInput" placeholder="Languague" >
         Price
-        <input type="number" class="form-control" id="priceInput" placeholder="Price" required>
+        <input type="number" class="form-control" id="priceInput" placeholder="Price" >
 
-        <form action="index.html">
+        <button onclick="validateBookInput()" class="link-button" innerHTML="">Potvrdi izmene</button>
 
-          <input type="submit" class="link-button" value="Potvrdi izmene"></input>                    
-        </form>
-      </form>
     </div>
   </div>
 
