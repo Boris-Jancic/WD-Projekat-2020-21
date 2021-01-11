@@ -1,5 +1,5 @@
 body {
-    background-color: #ac4b1c;
+    background-color: #750c2b;
 }
 
 a {
@@ -8,7 +8,7 @@ a {
 }
 
 .navbar {
-  background-color: #fd8c04;
+  background-color: #edaa37;
   font-family: 'Anton', sans-serif;
 }
 
@@ -22,15 +22,6 @@ a {
 .collapse a {
   text-decoration: none;
   color: black;
-}
-
-.form-inline button {
-  float: right;
-}
-
-.form-inline .form-control {
-    display: inline-block;
-    vertical-align: middle;
 }
 
 .title-container {
@@ -63,7 +54,7 @@ a {
 }
 
 .card {
-  text-align: left;
+  text-align: center;
   justify-content: center;
   flex-direction: column;
   margin-top: 20px;
@@ -96,13 +87,12 @@ a {
 
 .shoppingCart {
   font-size: 2rem;
-  margin-right: 40px;
+  margin-right: 3%;
 }
 
 .book-cover {
-  width: 50%;
-  height: 20%;
-  max-height: 20%;
+  height: 400px;
+  max-height: 400px;
   margin-bottom: 20px;
 }
 
@@ -118,7 +108,7 @@ a {
 
 .book-cover-readMore {
   width: 330px;
-  margin: 30px 30px 30px;
+  margin: 0px 30px 30px;
 }
 
 .book-description {
@@ -127,7 +117,7 @@ a {
   flex-direction: column;
   text-align: justify;
   padding: 10px;
-  background-color:#fd8c04;
+  background-color:#edaa37;
 
   font-size: 18px;
   margin-left: 200px;
@@ -136,6 +126,8 @@ a {
 
   border-radius: 35px;
 }
+
+
 
 
 @media screen and (max-width: 767px) {
@@ -171,12 +163,18 @@ a {
 }
 
 .description-container{
+  text-align: center;
   margin-top: 100px;
   margin-bottom: 100px;
 }
 
+.description-container p {
+  color: white;
+}
+
+
 .footer-section {
-  background-color: #fd8c04;
+  background-color: #edaa37;
 }
 
 .footer-container {
