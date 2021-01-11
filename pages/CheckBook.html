@@ -21,6 +21,12 @@
     <!-- Favicon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- JAVASCRIPT -->
+    <script src="../js/readMore.js"></script>
+
   </head>
 
   <body>
@@ -134,26 +140,27 @@
     </section>
 
     <div class="description-container">
-        <img class="book-cover-readMore" src="../images/1984.jpg" alt="">
-        <div class="book-info">
-            <p>Naziv: 1984</p>
-            <p>ISBN: 978-1491929568</p>
-            <p>Izdavacka kuca: Neka kuca</p>
-            <p>Autor: Dzordz Orvel</p>
-            <p>Godina izdavanja: 2013</p>
-            <p>Kratak opis: Nesto o knjizi</p>
-            <p>Broj stranica: 157</p>
-            <p>Tip poveza: Meki</p>
-            <p>Pismo: Latinica</p>
-            <p>Jezik: Engleski</p>
-            <span class="price">Cena: 945 din
+        <img class="book-cover-readMore" id="bookPicture" src="" alt="">
+        <div class="book-info book-description col-lg-5">
+            Name: <p id="name"></p>
+            ISBN: <p id="isbn"> </p>
+            Author: <p id="author"></p>
+            Publisher: <p id="publisher"></p>
+            Year of publishing: <p id="yearOfRelease"></p>
+            Short description: <p id="shortDesc"></p>
+            Pages: <p id="pages"></p>
+            Cover type: <p id="cover"></p>
+            Letter: <p id="letter"></p>
+            Language: <p id="language"></p>
+            Rating: <p id="rating"></p>
+            Price : <span class="price" id="bookPrice">
             <div>
                 <a href="editBook.html" class="link-button">Izmeni</a>
                 <a href="" class="link-button">Kupi</a>
             </div>
         </div>
+        <script>findByISBN()</script>
     </div>
-    <p class="book-description"><span class="temp1">Opis:</span> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt ullam ab magnam sit veritatis enim nam modi facilis nostrum excepturi. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione laudantium asperiores labore deserunt omnis soluta dolorem praesentium ipsa, excepturi eligendi recusandae quos aspernatur illo repellat mollitia sit voluptatum blanditiis officia ipsum itaque. Quidem ab voluptas, quam consequuntur suscipit illum non laudantium error neque earum! Distinctio tempore nemo blanditiis, corporis dolor voluptates! Aliquam fugiat odio cumque amet commodi quos ratione, fuga iusto facilis voluptas consectetur quis magni maxime libero. Saepe culpa debitis dolore tempora voluptatibus corrupti molestiae ratione quibusdam, cupiditate quae facere, voluptas enim obcaecati excepturi iste perferendis. Cumque sunt porro molestias atque officia nisi beatae? Sapiente aliquam adipisci nemo delectus?</p>
     
     <section class="footer-section">
         <div class="footer-container">
