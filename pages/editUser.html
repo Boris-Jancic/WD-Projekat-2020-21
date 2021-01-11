@@ -19,6 +19,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Do+Hyeon&family=Lobster&display=swap" rel="stylesheet">
 
+    <!-- JAVASCRIPT -->
+    <script src="../js/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/validation.js"></script>
+    <script src="../js/components.js"></script>
+
   </head>
 
   <body>
@@ -132,7 +139,6 @@
     <img class="book-cover-readMore" src="../images/userM.png" alt="">
     <div class="book-info">
 
-      <form>
         Username
         <input type="text" class="form-control" id="UsernameInput" placeholder="Username" required>
         Password
@@ -142,17 +148,15 @@
         Name
         <input type="text" class="form-control" id="NameInput" placeholder="Name" required>                   
         Last Name
-        <input type="date" class="form-control" id="lastNameInput" placeholder="Last Name" required>
+        <input type="text" class="form-control" id="lastNameInput" placeholder="Last Name" required>
         Address
         <input type="text" class="form-control" id="addressInput" placeholder="Address" required>
         Date of Birth
         <input type="date" class="form-control" id="dateOfBirthInput" required>
         Phone number
         <input type="text" class="form-control" id="phoneNumberInput" placeholder="Phone number" required>
-
-        <form action="index.html">
-          <input type="submit" class="link-button" value="Potvrdi izmene"></input>                    
-        </form>
+        
+        <button onclick="validateUserInput()" class="link-button" innerHTML="">Potvrdi izmene</button>
 
       </form>
     </div>
