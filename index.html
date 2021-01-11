@@ -14,6 +14,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/popUp.css">
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -21,7 +22,13 @@
 
     <!-- Favicon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- JAVASCRIPT -->
+    <script src="js/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/index.js"></script>
 
   </head>
 
@@ -60,9 +67,8 @@
         
         <form class="form-inline">
 
-          <button type="button" class="btn btn-block btn-dark" data-toggle="modal" data-target="#modalLogin">Log in</button>
+          <button type="button" id="loginBtn" class="btnRegister btn btn-block btn-dark" data-toggle="modal" data-target="#modalLogin">Log in</button>
           <!-- MODAL LOG IN-->
-
           <div class="container">
             <div class="col-lg-12">
 
@@ -75,15 +81,16 @@
                     </div>
 
                     <div class="modal-body">
-                    Email &nbsp;
-                    <input type="email" style="margin-left: 28px;">
-                    <br>
-                    Password &nbsp;
-                    <input type="password">
+                      Username &nbsp;
+                      <input type="email" id="txtLUsername">
+                      <br>
+                      Password &nbsp;
+                      <input id="txtLPassword" type="password" style="margin-left: 1px;">
                     </div>
 
                     <div class="modal-footer">
-                      <button type="button" name="button" class="btn btn-warning" data-dismiss="modal" >Continue</button>
+                      <button type="button" name="button" class="btn btn-warning" data-dismiss="modal" >Cancel</button>
+                      <button type="button" onclick="checkLogin()" name="button" class="btn btn-warning" data-dismiss="modal" >Continue</button>
                     </div>
 
                   </div>
@@ -92,8 +99,9 @@
 
             </div>
           </div>
+          
 
-          <button type="button" class="btn btn-block btn-dark" data-toggle="modal" data-target="#modalRegister">Register</button>
+          <button type="button" id="registerBtn" class="btnRegister btn btn-block btn-dark" data-toggle="modal" data-target="#modalRegister">Register</button>
 
           <!-- MODAL REGISTER -->
           <div class="container">
@@ -109,17 +117,18 @@
 
                     <div class="modal-body">
                       Name &nbsp;
-                      <input type="input" style="margin-left: 27px;">
+                      <input type="input" id="txtRName" style="margin-left: 27px;">
                       <br>
                       Email &nbsp;
-                      <input type="email" style="margin-left: 28px;">
+                      <input type="email" id="txtREmail" style="margin-left: 28px;">
                       <br>
                       Password &nbsp;
-                      <input type="password">
+                      <input id="txtRPassword" type="password">
                     </div>
 
                     <div class="modal-footer">
-                      <button type="button" name="button" class="btn btn-warning" data-dismiss="modal" >Continue</button>
+                      <button type="button" name="button" class="btn btn-warning" data-dismiss="modal" >Cancel</button>
+                      <button type="button" onclick="checkRegister()" name="button" class="btn btn-warning" data-dismiss="modal" >Continue</button>
                     </div>
 
                   </div>
@@ -151,200 +160,24 @@
   <!-- Features -->
   <section class="flex-container">
 
-    <div class="row">
-      <div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card">
-          <div class="card-body text-center">
-            <img class="book-cover" src="images/artOfWar.jpg" alt="">
-            <h5 class="card-title">Art of War</h5>
-            <p class="card-text">The Art of War is an ancient Chinese military treatise dating from the Late Spring and Autumn Period. </p>
-            <a href="pages/checkBook.html" class="btn btn-warning btn-block">Read More</a>
-            <a href="#" class="btn btn-warning btn-block">WishList</a>
-            <a href="#" class="btn btn-warning btn-block">Add to cart</a>
+    <div id="app">
+      <div class="row" >
+        <div v-for="book in books" class="col-sm-12 col-md-6 col-lg-4">
+          <div class="card">
+              <img class="book-cover" :src="book.slika">
+              <h5 >{{book.naziv}}</h5>
+              <p class="card-text">Author : {{book.autor}} </p>
+              <h6>Price : {{book.cena}} </h6>
+              <form action="pages/checkBook.html">
+                <input id="bookISBN" type="hidden" :value="book.isbn">
+                <input type="submit" class="btn btn-warning btn-block" onclick="passISBN(bookISBN.value)" value="Read more" style="margin: 10px 0 8px 0;">
+              </form>
+              <a href="#" class="btn btn-warning btn-block">WishList</a>
+              <a href="#" class="btn btn-warning btn-block">Add to cart</a>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card">
-          <div class="card-body text-center">
-            <img class="book-cover" src="images/animalFarm.jpg" alt="">
-            <h5 class="card-title">Animal Farm</h5>
-            <p class="card-text">The book tells the story of a group of farm animals who rebel against their human farmer</p>
-            <a href="pages/checkBook.html" class="btn btn-warning btn-block">Read More</a>
-            <a href="#" class="btn btn-warning btn-block">WishList</a>
-            <a href="#" class="btn btn-warning btn-block">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card">
-          <div class="card-body text-center">
-            <img class="book-cover" src="images/1984.jpg" alt="">
-            <h5 class="card-title">1984</h5>
-            <p class="card-text">In a totalitarian future society, a man, whose work is re-writing history, tries to rebel by falling in love.</p>
-            <a href="pages/checkBook.html" class="btn btn-warning btn-block">Read More</a>
-            <a href="#" class="btn btn-warning btn-block">WishList</a>
-            <a href="#" class="btn btn-warning btn-block">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card">
-          <div class="card-body text-center">
-            <img class="book-cover" src="images/stranger.jpg" alt="">
-            <h5 class="card-title">The stranger</h5>
-            <p class="card-text">The story of an ordinary man unwittingly drawn into a senseless murder on an Algerian beach. </p>
-            <a href="pages/checkBook.html" class="btn btn-warning btn-block">Read More</a>
-            <a href="#" class="btn btn-warning btn-block">WishList</a>
-            <a href="#" class="btn btn-warning btn-block">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card">
-          <div class="card-body text-center">
-            <img class="book-cover" src="images/metro2033.jpg" alt="">
-            <h5 class="card-title">Metro 2033</h5>
-            <p class="card-text">Is set within the Moscow Metro, where the last survivors hide after a global nuclear holocaust.</p>
-            <a href="pages/checkBook.html" class="btn btn-warning btn-block">Read More</a>
-            <a href="#" class="btn btn-warning btn-block">WishList</a>
-            <a href="#" class="btn btn-warning btn-block">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card">
-          <div class="card-body text-center">
-            <img class="book-cover" src="images/witcher.jpg" alt="">
-            <h5 class="card-title">The tower of Swallow</h5>
-            <p class="card-text">The world is at war and the prophesied savior is nowhere to be found. The Witcher, races to find her. </p>
-            <a href="pages/checkBook.html" class="btn btn-warning btn-block">Read More</a>
-            <a href="#" class="btn btn-warning btn-block">WishList</a>
-            <a href="#" class="btn btn-warning btn-block">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card">
-          <div class="card-body text-center">
-            <img class="book-cover" src="images/proces.jpg" alt="">
-            <h5 class="card-title">The Trial</h5>
-            <p class="card-text">The story of Josef K., a man arrested and prosecuted by a remote, inaccessible authority.</p>
-            <a href="pages/checkBook.html" class="btn btn-warning btn-block">Read More</a>
-            <a href="#" class="btn btn-warning btn-block">WishList</a>
-            <a href="#" class="btn btn-warning btn-block">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card">
-          <div class="card-body text-center">
-            <img class="book-cover" src="images/roadsidePicnic.jpg" alt="">
-            <h5 class="card-title">Roadside picnic</h5>
-            <p class="card-text">A compelled stalker, in spite of the extreme danger, ventures illegally into the Zone.</p>
-            <a href="pages/checkBook.html" class="btn btn-warning btn-block">Read More</a>
-            <a href="#" class="btn btn-warning btn-block">WishList</a>
-            <a href="#" class="btn btn-warning btn-block">Add to cart</a>
-          </div>
-        </div>
-      </div><div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card">
-          <div class="card-body text-center">
-            <img class="book-cover" src="images/artOfWar.jpg" alt="">
-            <h5 class="card-title">Art of War</h5>
-            <p class="card-text">The Art of War is an ancient Chinese military treatise dating from the Late Spring and Autumn Period. </p>
-            <a href="pages/checkBook.html" class="btn btn-warning btn-block">Read More</a>
-            <a href="#" class="btn btn-warning btn-block">WishList</a>
-            <a href="#" class="btn btn-warning btn-block">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card">
-          <div class="card-body text-center">
-            <img class="book-cover" src="images/animalFarm.jpg" alt="">
-            <h5 class="card-title">Animal Farm</h5>
-            <p class="card-text">The book tells the story of a group of farm animals who rebel against their human farmer</p>
-            <a href="pages/checkBook.html" class="btn btn-warning btn-block">Read More</a>
-            <a href="#" class="btn btn-warning btn-block">WishList</a>
-            <a href="#" class="btn btn-warning btn-block">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card">
-          <div class="card-body text-center">
-            <img class="book-cover" src="images/1984.jpg" alt="">
-            <h5 class="card-title">1984</h5>
-            <p class="card-text">In a totalitarian future society, a man, whose work is re-writing history, tries to rebel by falling in love.</p>
-            <a href="pages/checkBook.html" class="btn btn-warning btn-block">Read More</a>
-            <a href="#" class="btn btn-warning btn-block">WishList</a>
-            <a href="#" class="btn btn-warning btn-block">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card">
-          <div class="card-body text-center">
-            <img class="book-cover" src="images/stranger.jpg" alt="">
-            <h5 class="card-title">The stranger</h5>
-            <p class="card-text">The story of an ordinary man unwittingly drawn into a senseless murder on an Algerian beach. </p>
-            <a href="pages/checkBook.html" class="btn btn-warning btn-block">Read More</a>
-            <a href="#" class="btn btn-warning btn-block">WishList</a>
-            <a href="#" class="btn btn-warning btn-block">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card">
-          <div class="card-body text-center">
-            <img class="book-cover" src="images/metro2033.jpg" alt="">
-            <h5 class="card-title">Metro 2033</h5>
-            <p class="card-text">Is set within the Moscow Metro, where the last survivors hide after a global nuclear holocaust.</p>
-            <a href="pages/checkBook.html" class="btn btn-warning btn-block">Read More</a>
-            <a href="#" class="btn btn-warning btn-block">WishList</a>
-            <a href="#" class="btn btn-warning btn-block">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card">
-          <div class="card-body text-center">
-            <img class="book-cover" src="images/witcher.jpg" alt="">
-            <h5 class="card-title">The tower of Swallow</h5>
-            <p class="card-text">The world is at war and the prophesied savior is nowhere to be found. The Witcher, races to find her. </p>
-            <a href="pages/checkBook.html" class="btn btn-warning btn-block">Read More</a>
-            <a href="#" class="btn btn-warning btn-block">WishList</a>
-            <a href="#" class="btn btn-warning btn-block">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card">
-          <div class="card-body text-center">
-            <img class="book-cover" src="images/proces.jpg" alt="">
-            <h5 class="card-title">The Trial</h5>
-            <p class="card-text">The story of Josef K., a man arrested and prosecuted by a remote, inaccessible authority.</p>
-            <a href="pages/checkBook.html" class="btn btn-warning btn-block">Read More</a>
-            <a href="#" class="btn btn-warning btn-block">WishList</a>
-            <a href="#" class="btn btn-warning btn-block">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card">
-          <div class="card-body text-center">
-            <img class="book-cover" src="images/roadsidePicnic.jpg" alt="">
-            <h5 class="card-title">Roadside picnic</h5>
-            <p class="card-text">A compelled stalker, in spite of the extreme danger, ventures illegally into the Zone.</p>
-            <a href="pages/checkBook.html" class="btn btn-warning btn-block">Read More</a>
-            <a href="#" class="btn btn-warning btn-block">WishList</a>
-            <a href="#" class="btn btn-warning btn-block">Add to cart</a>
-          </div>
-        </div>
       </div>
     </div>
-
 
   </section>
 
@@ -355,4 +188,28 @@
   </section>
 
   </body>
+
+  <script>
+    var app = new Vue({
+
+    el: '#app',
+    data:{
+      books: []
+    },
+
+    mounted: function(){
+        axios.get("https://knjizaraprojekat2020-21-default-rtdb.firebaseio.com/knjige.json")
+        .then(response => {
+        this.books = response.data;
+        // handle success
+        console.log(response);
+        })
+
+        .catch(error => {
+        console.log(error);
+        })
+    }
+    })
+
+    </script>
 </html>
