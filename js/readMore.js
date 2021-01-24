@@ -30,21 +30,17 @@ function findByISBN(){
 
         if(book.isbn == wantedISBN) {
             pictue.src = book.slika;
-            bookName.innerHTML = book.naziv;
-            isbn.innerHTML = book.isbn;
-            publisher.innerHTML = book.izdavackaKuca;
-            yearOfRelease.innerHTML = book.godinaIzdavanja;
-            shortDesc.innerHTML = book.opis;
-            pages.innerHTML = book.brojStranica;
-            cover.innerHTML = book.tipPoveza;
-            letter.innerHTML = book.pismo;
-            language.innerHTML = book.jezik;
-            rating.innerHTML = book.ocena;
-            bookprice.innerHTML = book.cena;
+            bookName.innerHTML += "\n" + book.naziv;
+            isbn.innerHTML += "\n" + book.isbn;
+            publisher.innerHTML += "\n" + book.izdavackaKuca;
+            yearOfRelease.innerHTML += "\n" + book.godinaIzdavanja;
+            shortDesc.innerHTML += "\n" + book.opis;
+            pages.innerHTML += "\n" + book.brojStranica;
+            cover.innerHTML += "\n" + book.tipPoveza;
+            letter.innerHTML += "\n" + book.pismo;
+            language.innerHTML += "\n" + book.jezik;
+            rating.innerHTML += "\n" + book.ocena;
+            bookprice.innerHTML += "\n" + book.cena;
         }
     } 
-}
-
-function hey(){
-    alert("hej!");
 }
