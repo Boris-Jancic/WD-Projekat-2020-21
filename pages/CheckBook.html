@@ -16,6 +16,7 @@
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Do+Hyeon&family=Lobster&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
@@ -26,6 +27,7 @@
 
     <!-- JAVASCRIPT -->
     <script src="../js/readMore.js"></script>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 
   </head>
 
@@ -141,25 +143,39 @@
 
     <div class="description-container">
         <img class="book-cover-readMore" id="bookPicture" src="" alt="">
+
         <div class="book-info book-description col-lg-5">
-            Name: <p id="name"></p>
-            ISBN: <p id="isbn"> </p>
-            Author: <p id="author"></p>
-            Publisher: <p id="publisher"></p>
-            Year of publishing: <p id="yearOfRelease"></p>
-            Short description: <p id="shortDesc"></p>
-            Pages: <p id="pages"></p>
-            Cover type: <p id="cover"></p>
-            Letter: <p id="letter"></p>
-            Language: <p id="language"></p>
-            Rating: <p id="rating"></p>
-            Price : <span class="price" id="bookPrice">
-            <div>
-                <a href="editBook.html" class="link-button">Izmeni</a>
-                <a href="" class="link-button">Kupi</a>
+            <p id="name">Name: </p>
+            <p id="isbn">ISBN:  </p>
+            <p id="author">Author: </p>
+            <p id="publisher">Publisher: </p>
+            <p id="yearOfRelease">Year of publishing: </p>
+            <p id="shortDesc">Short description: </p>
+            <p id="pages">Pages: </p>
+            <p id="cover">Cover type: </p>
+            <p id="letter">Letter: </p>
+            <p id="language">Language: </p>
+            <p id="rating">Rating:</p>
+
+            <div class="rating-wrapper">
+                <h6>Rate the book</h6>
+                <input type="radio" name="star" id="star5" onclick="console.log('Ocenili ste knjigu sa ocenom 5')"><label for="star5">
+                </label>
+                <input type="radio" name="star" id="star4" onclick="console.log('Ocenili ste knjigu sa ocenom 4')"><label for="star4">
+                </label>
+                <input type="radio" name="star" id="star3" onclick="console.log('Ocenili ste knjigu sa ocenom 3')"><label for="star3">
+                </label>
+                <input type="radio" name="star" id="star2" onclick="console.log('Ocenili ste knjigu sa ocenom 2')"><label for="star2">
+                </label>
+                <input type="radio" name="star" id="star1" onclick="console.log('Ocenili ste knjigu sa ocenom 1')"><label for="star1">
+                </label>
             </div>
+            <div>
+                <a href="" class="link-button">Buy</a>
+                Price : <span class="price" id="bookPrice">
+            </div>
+
         </div>
-        <script>findByISBN()</script>
     </div>
     
     <section class="footer-section">

@@ -94,6 +94,7 @@ a {
   height: 400px;
   max-height: 400px;
   margin-bottom: 20px;
+  padding: 5% 5% 0 5%;
 }
 
 .description-container {
@@ -107,7 +108,8 @@ a {
 }
 
 .book-cover-readMore {
-  width: 330px;
+  height: 600px;
+  max-height: 600px;
   margin: 0px 30px 30px;
 }
 
@@ -126,9 +128,6 @@ a {
 
   border-radius: 35px;
 }
-
-
-
 
 @media screen and (max-width: 767px) {
   .book-description {
@@ -179,5 +178,86 @@ a {
 
 .footer-container {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 130px;
 }
+
+.checked {
+  color: #c457fa;
+}
+
+.rating-wrapper {
+  direction: rtl;
+  text-align: center;
+}
+
+.rating-wrapper input {
+  display: none;
+}
+
+.rating-wrapper label{
+  display: inline-block;
+  width: 60px;
+  cursor: pointer;
+}
+
+.rating-wrapper label:before{
+  content: "\2605";
+  position: absolute;
+  font-size: 80px;
+  display: inline-block;
+}
+
+.rating-wrapper label:after{
+  content: "\2605";
+  position: relative;
+  font-size: 79px;
+  display: inline-block;
+  color: purple;
+  text-shadow: 0 2px 5px ;
+  opacity: 0;
+}
+
+.rating-wrapper label:hover:after,
+.rating-wrapper label:hover ~ label:after,
+.rating-wrapper input:checked ~ label:after{
+  opacity: 1;
+}
+
+/* .rate-book {
+  transform: rotateY(180deg);
+  position: relative;
+  padding-left: 35%;
+}
+
+.rate-book input{
+  display: none;
+}
+
+.rate-book label{
+  cursor: pointer;
+}
+
+.rate-book label:before{
+  content: '\f005';
+  font-family: fontAwesome;
+  position: relative;
+  display: inline-block;
+  font-size: 50px;
+  color:#101010;
+}
+
+.rate-book label:after{
+  content: '\f005';
+  font-family: fontAwesome;
+  position: absolute;
+  font-size: 50px;
+  color:#c457fa;
+  opacity: 0;
+  transition: .5s;
+  text-shadow: 0 2px 5px;
+}
+
+.rate-book label:hover:after,
+.rate-book input:checked ~ label:after{
+  opacity: 1 !important;
+} */
