@@ -14,6 +14,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/popUp.css">
 
     <!-- Google fonts -->
@@ -168,6 +169,47 @@
               <h5 >{{book.naziv}}</h5>
               <p class="card-text">Author : {{book.autor}} </p>
               <h6>Price : {{book.cena}} </h6>
+
+              <div v-if="book.ocena == 1">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </div>
+
+              <div v-if="book.ocena == 2">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </div>
+
+              <div v-if="book.ocena == 3">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </div>
+
+              <div v-if="book.ocena == 4">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+              </div>
+
+              <div v-if="book.ocena == 5">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+
               <form action="pages/checkBook.html">
                 <input id="bookISBN" type="hidden" :value="book.isbn">
                 <input type="submit" class="btn btn-warning btn-block" onclick="passISBN(bookISBN.value)" value="Read more" style="margin: 10px 0 8px 0;">
